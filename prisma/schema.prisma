@@ -1,0 +1,35 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://hasbi:hasbi@examen.nlsjj.mongodb.net/examen?retryWrites=true&w=majority"
+}
+
+model movies {
+  id                 String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  awards             Json
+  cast               String[]
+  countries          String[]
+  directors          String[]
+  fullplot           String?
+  genres             String[]
+  id_                String   @map("id")
+  imdb               Json
+  languages          String[]
+  lastupdated        String
+  metacritic         Int?
+  num_mflix_comments Int?
+  plot               String?
+  poster             String?
+  rated              String?
+  released           String?
+  runtime            Int
+  title              String
+  tomatoes           Json
+  type               String
+  writers            String[]
+  year               Int
+}
